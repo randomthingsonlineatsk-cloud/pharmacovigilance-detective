@@ -12,7 +12,7 @@ A game for classifying fictional adverse-event case reports.
 - Reference sections on aggregate reporting, signal detection, coding dictionaries and regulators
 - ICSR-building exercise and achievement badges
 - Shared leaderboard and cross-device sync codes (Convex), with a browser-only fallback
-- "Ask the Detective": a keyword-based classifier that points a question to the right section
+- "Ask the Detective": a rule-based classifier (weighted terms, a second-topic hint, and a seriousness / expectedness / causality read-out for pasted cases)
 
 ## Tech stack
 TanStack Start, React, Tailwind CSS, Convex (leaderboard and sync codes). Prerendered and hosted on Cloudflare Workers.
