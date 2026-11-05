@@ -2,7 +2,7 @@
 
 A game for classifying fictional adverse-event case reports.
 
-**Live demo:** https://pharmacovigilance-detective.randomthingsonlineatsk.workers.dev (once deployed)
+**Live demo:** https://pharmacovigilance-detective.randomthingsonlineatsk.workers.dev
 
 > This is a fictional, educational demonstration. Do not use it for real patient data, clinical decisions or regulatory submissions.
 
