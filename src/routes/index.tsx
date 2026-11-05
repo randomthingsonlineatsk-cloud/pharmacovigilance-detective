@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useEffect, useMemo, useState } from 'react'
 import { api, useMutation, useQuery } from '@/lib/backend'
-import { classifyQuestion } from '@/lib/classify'
+import { classifyQuestion, type ClassifyResult } from '@/lib/classify'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import {
@@ -1176,7 +1176,7 @@ function FormsTab() {
 
 function AskTab() {
   const [question, setQuestion] = useState('')
-  const [result, setResult] = useState<{ category: string; confidence: string; explanation: string; suggestedSection: string } | null>(null)
+  const [result, setResult] = useState<ClassifyResult | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
@@ -1197,7 +1197,7 @@ function AskTab() {
     <Card className="bg-lab-panel border-lab-line">
       <CardHeader className="pb-2">
         <CardTitle className="font-mono text-sm text-lab-red">Ask the Detective</CardTitle>
-        <CardDescription className="text-xs text-lab-text-muted">Paste a pharmacovigilance question or case snippet, and a keyword-based classifier will identify what type of PV question it is and point you to the right section of this app. It matches the words in your question against each topic, so phrasing matters — and it classifies, it doesn't replace a real qualified assessment.</CardDescription>
+        <CardDescription className="text-xs text-lab-text-muted">Paste a pharmacovigilance question or case snippet, and a keyword-based classifier will identify what type of PV question it is and point you to the right section of this app. It matches the words in your question against each topic and, if you paste a case, reads out the seriousness, expectedness and causality cues it can see. It is rule-based (no AI), so phrasing matters — and it classifies, it doesn't replace a real qualified assessment.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-3">
         <textarea
@@ -1215,6 +1215,16 @@ function AskTab() {
             <p className="font-mono font-bold text-lab-gold">{result.category} <span className="text-xs text-lab-text-muted">({result.confidence} confidence)</span></p>
             <p className="text-sm text-lab-text">{result.explanation}</p>
             <p className="text-xs font-mono text-lab-text-muted">→ {result.suggestedSection}</p>
+            {result.alsoRelevant && (
+              <p className="text-xs text-lab-text-muted pt-1">Also touches on <span className="font-mono text-lab-text">{result.alsoRelevant.category}</span> → {result.alsoRelevant.suggestedSection}</p>
+            )}
+            {result.caseReading && (
+              <ul className="pt-2 space-y-1 border-t border-lab-line mt-2">
+                {result.caseReading.map((line) => (
+                  <li key={line} className="text-xs text-lab-text">{line}</li>
+                ))}
+              </ul>
+            )}
           </div>
         )}
       </CardContent>
