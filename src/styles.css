@@ -1,0 +1,180 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@plugin '@tailwindcss/typography';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --lab-bg: 220 32% 7%;
+  --lab-panel: 220 26% 12%;
+  --lab-panel-strong: 220 24% 16%;
+  --lab-line: 220 18% 26%;
+  --lab-text: 210 25% 95%;
+  --lab-text-muted: 215 12% 66%;
+  --lab-red: 0 78% 62%;
+  --lab-red-soft: 0 78% 62% / 0.16;
+  --lab-gold: 42 85% 55%;
+  --lab-gold-soft: 42 85% 55% / 0.16;
+  --lab-emerald: 152 55% 48%;
+  --lab-emerald-soft: 152 55% 48% / 0.16;
+  --lab-blue: 208 75% 58%;
+  --lab-blue-soft: 208 75% 58% / 0.16;
+  --lab-violet: 262 60% 65%;
+  --lab-violet-soft: 262 60% 65% / 0.16;
+
+  --background: var(--lab-bg);
+  --foreground: var(--lab-text);
+  --card: var(--lab-panel);
+  --card-foreground: var(--lab-text);
+  --popover: var(--lab-panel-strong);
+  --popover-foreground: var(--lab-text);
+  --primary: var(--lab-red);
+  --primary-foreground: 220 32% 7%;
+  --secondary: var(--lab-panel-strong);
+  --secondary-foreground: var(--lab-text);
+  --muted: var(--lab-panel-strong);
+  --muted-foreground: var(--lab-text-muted);
+  --accent: var(--lab-violet-soft);
+  --accent-foreground: var(--lab-violet);
+  --destructive: var(--lab-red);
+  --destructive-foreground: 0 0% 98%;
+  --border: var(--lab-line);
+  --input: var(--lab-line);
+  --ring: var(--lab-red);
+  --chart-1: var(--lab-red);
+  --chart-2: var(--lab-gold);
+  --chart-3: var(--lab-emerald);
+  --chart-4: var(--lab-blue);
+  --chart-5: var(--lab-violet);
+  --radius: 0.625rem;
+  --sidebar: var(--lab-panel);
+  --sidebar-foreground: var(--lab-text);
+  --sidebar-primary: var(--lab-red);
+  --sidebar-primary-foreground: 220 32% 7%;
+  --sidebar-accent: var(--lab-panel-strong);
+  --sidebar-accent-foreground: var(--lab-text);
+  --sidebar-border: var(--lab-line);
+  --sidebar-ring: var(--lab-red);
+}
+
+.dark {
+  --background: var(--lab-bg);
+  --foreground: var(--lab-text);
+  --card: var(--lab-panel);
+  --card-foreground: var(--lab-text);
+  --popover: var(--lab-panel-strong);
+  --popover-foreground: var(--lab-text);
+  --primary: var(--lab-red);
+  --primary-foreground: 220 32% 7%;
+  --secondary: var(--lab-panel-strong);
+  --secondary-foreground: var(--lab-text);
+  --muted: var(--lab-panel-strong);
+  --muted-foreground: var(--lab-text-muted);
+  --accent: var(--lab-violet-soft);
+  --accent-foreground: var(--lab-violet);
+  --destructive: var(--lab-red);
+  --destructive-foreground: 0 0% 98%;
+  --border: var(--lab-line);
+  --input: var(--lab-line);
+  --ring: var(--lab-red);
+  --sidebar: var(--lab-panel);
+  --sidebar-foreground: var(--lab-text);
+  --sidebar-primary: var(--lab-red);
+  --sidebar-primary-foreground: 220 32% 7%;
+  --sidebar-accent: var(--lab-panel-strong);
+  --sidebar-accent-foreground: var(--lab-text);
+  --sidebar-border: var(--lab-line);
+  --sidebar-ring: var(--lab-red);
+}
+
+@theme inline {
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --color-lab-bg: hsl(var(--lab-bg));
+  --color-lab-panel: hsl(var(--lab-panel));
+  --color-lab-panel-strong: hsl(var(--lab-panel-strong));
+  --color-lab-line: hsl(var(--lab-line));
+  --color-lab-text: hsl(var(--lab-text));
+  --color-lab-text-muted: hsl(var(--lab-text-muted));
+  --color-lab-red: hsl(var(--lab-red));
+  --color-lab-red-soft: hsl(var(--lab-red-soft));
+  --color-lab-gold: hsl(var(--lab-gold));
+  --color-lab-gold-soft: hsl(var(--lab-gold-soft));
+  --color-lab-emerald: hsl(var(--lab-emerald));
+  --color-lab-emerald-soft: hsl(var(--lab-emerald-soft));
+  --color-lab-blue: hsl(var(--lab-blue));
+  --color-lab-blue-soft: hsl(var(--lab-blue-soft));
+  --color-lab-violet: hsl(var(--lab-violet));
+  --color-lab-violet-soft: hsl(var(--lab-violet-soft));
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+}
+
+body vite-error-overlay {
+  display: none;
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes stampIn {
+  0% { transform: scale(1.4) rotate(-8deg); opacity: 0; }
+  60% { transform: scale(0.95) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+@keyframes scoreReveal {
+  0% { opacity: 0; transform: scale(0.9); }
+  100% { opacity: 1; transform: scale(1); }
+}
