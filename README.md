@@ -8,6 +8,7 @@ A game for classifying fictional adverse-event case reports.
 
 ## Features
 - Classify cases by seriousness, expectedness, causality and reporting timeline
+- Study SAEs: the four serious adverse events of the fictional HRP-301 (VERDANT-1) trial, assessed as a sponsor's safety team does (investigator's 24-hour report, expectedness against the Investigator's Brochure RSI, either party's causality, unblinding, SUSAR and the 7- or 15-day clock), with an E2B(R3)-shaped export the CSR & Narrative Studio reads (https://github.com/randomthingsonlineatsk-cloud/csr-narrative-studio)
 - Causality scales: Naranjo, WHO-UMC and others
 - Reference sections on aggregate reporting, signal detection, coding dictionaries and regulators
 - ICSR-building exercise and achievement badges

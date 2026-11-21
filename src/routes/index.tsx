@@ -3,6 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { api, useMutation, useQuery } from '@/lib/backend'
 import { classifyQuestion, type ClassifyResult } from '@/lib/classify'
 import { Button } from '@/components/ui/button'
+import { TrialTab } from '@/components/trial-tab'
 import { Input } from '@/components/ui/input'
 import {
   Card,
@@ -1236,7 +1237,7 @@ function AskTab() {
 // App
 // ---------------------------------------------------------------------------
 
-type Tab = 'detective' | 'scales' | 'lifecycle' | 'aggregate' | 'dictionaries' | 'regulators' | 'builder' | 'forms' | 'history' | 'ask'
+type Tab = 'detective' | 'trial' | 'scales' | 'lifecycle' | 'aggregate' | 'dictionaries' | 'regulators' | 'builder' | 'forms' | 'history' | 'ask'
 
 function App() {
   const [tab, setTab] = useState<Tab>('detective')
@@ -1252,6 +1253,7 @@ function App() {
 
         <div className="flex flex-wrap gap-2">
           <TabButton active={tab === 'detective'} onClick={() => setTab('detective')}>Detective</TabButton>
+          <TabButton active={tab === 'trial'} onClick={() => setTab('trial')}>Study SAEs</TabButton>
           <TabButton active={tab === 'builder'} onClick={() => setTab('builder')}>Build ICSR</TabButton>
           <TabButton active={tab === 'scales'} onClick={() => setTab('scales')}>Scales</TabButton>
           <TabButton active={tab === 'lifecycle'} onClick={() => setTab('lifecycle')}>Case Lifecycle</TabButton>
@@ -1264,6 +1266,7 @@ function App() {
         </div>
 
         {tab === 'detective' && <DetectiveTab />}
+        {tab === 'trial' && <TrialTab />}
         {tab === 'builder' && <BuilderTab />}
         {tab === 'scales' && <ScalesTab />}
         {tab === 'lifecycle' && <LifecycleTab />}
